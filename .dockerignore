@@ -1,0 +1,48 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.local
+
+# Data and logs
+data/
+*.log
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation (for deployment repo)
+README.md
+current_architecture.md
+solution_plan.md
+
+# Test files
+tests/
+*.test.py
+
+# Temporary files
+temp_reference_code.py
+run_temp.py
