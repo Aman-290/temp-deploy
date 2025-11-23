@@ -20,9 +20,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-# Download required model files for the agent
-# Using the voice_agent.py download-files command as it's the actual entry point
-RUN python app/agents/voice_agent.py download-files
+# Note: Model files will be downloaded automatically on first run
+# Skipping download-files during build to avoid requiring API keys
+# The LiveKit agent will download required models when it starts
 
 # Create data directory for SQLite and tokens
 RUN mkdir -p data

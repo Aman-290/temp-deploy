@@ -8,17 +8,17 @@ PORT=${PORT:-8000}
 
 echo "Starting Jarvis Backend on port $PORT"
 
-# Start OAuth server in background
+# Start OAuth server in background, redirect stderr to stdout for Cloud Run logs
 echo "Starting OAuth server..."
-python run_server.py &
+python run_server.py 2>&1 &
 SERVER_PID=$!
 
 # Wait a moment for server to start
 sleep 2
 
-# Start LiveKit agent
+# Start LiveKit agent, redirect stderr to stdout for Cloud Run logs
 echo "Starting LiveKit agent..."
-python run_agent.py dev &
+python run_agent.py dev 2>&1 &
 AGENT_PID=$!
 
 # Function to handle shutdown
